@@ -1,5 +1,0 @@
-Jenkins job at equifax 
-#Stage 1 - SCM/Clone
-This stage connected to the repo
-github or bitbucket and pulled 
-the application code
