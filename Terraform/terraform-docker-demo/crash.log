@@ -1,0 +1,23 @@
+panic: Failed to load userenv.dll: The paging file is too small for this operation to complete.
+
+goroutine 1 [running]:
+syscall.(*LazyProc).mustFind(...)
+	/usr/local/go/src/syscall/dll_windows.go:320
+syscall.(*LazyProc).Addr(...)
+	/usr/local/go/src/syscall/dll_windows.go:327
+syscall.GetUserProfileDirectory(0x184, 0xc0006e6270, 0xc0005bfc00, 0xc0006e6270, 0x1744a22e000)
+	/usr/local/go/src/syscall/zsyscall_windows.go:1910 +0x128
+syscall.Token.GetUserProfileDirectory(0x184, 0xc000047500, 0x2d, 0x0, 0x0)
+	/usr/local/go/src/syscall/security_windows.go:368 +0x8f
+os/user.current(0x0, 0x0, 0x0)
+	/usr/local/go/src/os/user/lookup_windows.go:217 +0x1c7
+os/user.Current.func1()
+	/usr/local/go/src/os/user/lookup.go:15 +0x29
+sync.(*Once).doSlow(0x437ec20, 0x2f71670)
+	/usr/local/go/src/sync/once.go:66 +0xf7
+sync.(*Once).Do(...)
+	/usr/local/go/src/sync/once.go:57
+os/user.Current(0xc000365680, 0xf, 0x2e34305)
+	/usr/local/go/src/os/user/lookup.go:15 +0x105
+k8s.io/klog.init.1()
+	/go/pkg/mod/k8s.io/klog@v0.4.0/klog_file.go:58 +0x4b
